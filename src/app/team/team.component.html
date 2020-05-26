@@ -1,1 +1,21 @@
-<p>team works!</p>
+<div *ngFor="let data of team_data; let index = index;" class="col-lg-3 offset-lg-2 pt-5 bgl_mb">    
+    <div id="main_inf">
+        <img *ngIf="data.img != ''; else imgdefault" id="img_main" src="../../assets/{{data.img}}.jpg"/>
+        <ng-template #imgdefault><img src="../../assets/default.jpg"/></ng-template>
+        <h2>{{data.firstname}}</h2>
+        <h3>{{data.lastname}}</h3>
+    </div>
+    <hr>
+    <div id="link">
+        <ul>
+            <li><a href="http://github.com/{{data.git}}" target=_blank><i _ngcontent-hdr-c18="" class="fa fa-github" style="color: white;"></i></a></li>
+            <li><a href="http://linkedin.com/in/{{data.link}}" target=_blank><i _ngcontent-hdr-c18="" class="fa fa-linkedin" style="color: rgb(0, 119, 181);"></i></a></li>
+            <li id="skills" style="float: right !important;" (click)="slideActivate(data.lastname)">My skills</li>
+        </ul>
+    </div>
+    
+    <div id="{{data.lastname}}" (click)="slideActivate(data.lastname)" class="hide">
+        <hr>
+        <div>Hello {{data.lastname}}</div>
+    </div>
+</div>

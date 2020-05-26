@@ -14,7 +14,6 @@ app-navbar {
     margin-top: 5%;
     margin-left:0;
     margin-right: 0;
-    height: 100%;
 }
 .o_bg_black{
     background-color:rgba(0, 0, 0, 0.5);
@@ -22,6 +21,9 @@ app-navbar {
 }
 .b_bl1 {
     border: black 2px solid
+}
+.arrow_block {
+    position: fixed;
 }
 .arrow {
     opacity: 0;

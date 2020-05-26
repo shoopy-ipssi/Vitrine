@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="row" id="main-content">
-  <div class="col-lg-1 text-center">
+  <div class="col-lg-1 text-center arrow_block">
     <a routerLink="{{tab_nav[previousPage].path}}">
       <div class="cursor">
         <div class="arrow arrow-first"></div>
@@ -8,10 +8,10 @@
       </div>
     </a>
   </div>
-  <div class="offset-lg-1 col-lg-8 o_bg_black b_bl1">
+  <div class="offset-lg-1 col-lg-10 o_bg_black b_bl1">
     <router-outlet></router-outlet>
   </div>
-  <div class="col-lg-1 offset-lg-1 text-center">
+  <div class="col-lg-1 offset-lg-1 text-center arrow_block">
     <a routerLink="{{tab_nav[nextPage].path}}">
       <div class="cursor">
         <div class="arrow_right arrow_right-first"></div>
