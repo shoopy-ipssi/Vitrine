@@ -1,0 +1,126 @@
+* {
+    background-color: #3a3737;
+}
+app-footer {
+    margin-bottom: 0!important;
+}
+app-navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+#main-content {
+    margin-top: 5%;
+    margin-left:0;
+    margin-right: 0;
+    height: 100%;
+}
+.o_bg_black{
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white
+}
+.b_bl1 {
+    border: black 2px solid
+}
+.arrow {
+    opacity: 0;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement 1s ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrow-movement 1s 0.5s ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px; 
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 30px;
+}
+
+.arrow:before {
+    transform: rotate(45deg) translateY(-23%);
+    transform-origin: bottom left;
+}
+
+.arrow:after {
+    transform: rotate(-45deg) translateY(23%);
+    transform-origin: top left;
+}
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        right: 10%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+        right: 0%;
+    }
+}
+
+.arrow_right {
+    opacity: 0;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow_right-first {
+    animation: arrow_right-movement 1s ease-in-out infinite;
+}
+.arrow_right-second {
+    animation: arrow_right-movement 1s 0.5s ease-in-out infinite;
+}
+
+.arrow_right:before,
+.arrow_right:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px; 
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 30px;
+}
+
+.arrow_right:before {
+    transform: rotate(45deg) translateY(-23%);
+    transform-origin: top right;
+}
+
+.arrow_right:after {
+    transform: rotate(-45deg) translateY(23%);
+    transform-origin: top right;
+}
+@keyframes arrow_right-movement {
+    0% { 
+        opacity: 0;
+        right: 0%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+        right: 10%;
+    }
+}
