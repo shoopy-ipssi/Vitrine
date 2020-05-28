@@ -1,1 +1,43 @@
-<p>{{route.url.replace('/', '')}}</p>
+<div class="container">
+    <div *ngIf="!responseMailjet">
+        <form [formGroup]="dataMail" (ngSubmit)="sendMail()">
+            <div class="form-group">
+                <label for="EmailContact">Contact</label>
+                <select id="EmailContact" name="EmailContact" class="form-control" formControlName="EmailContact" [ngClass]="{ 'is-invalid': submitted && dataMail.controls.EmailContact.errors }">
+                    <option *ngFor="let contact of data_contact" [ngValue]="contact.mail_address" value="contact.mail_address">{{contact.name}} {{contact.firstname}} - {{contact.job}}</option>
+                </select>
+                <div *ngIf="submitted && dataMail.controls.EmailContact.errors" class="invalid-feedback">
+                    <div *ngIf="dataMail.controls.EmailContact.errors.required">Veuillez sélectionner un contact.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="SubjectMail">Sujet</label>
+                <input type="text" required value="" name="SubjectMail" id="SubjectMail" class="form-control" formControlName="SubjectMail" [ngClass]="{ 'is-invalid': submitted && dataMail.controls.SubjectMail.errors }"/>
+                <div *ngIf="submitted && dataMail.controls.SubjectMail.errors" class="invalid-feedback">
+                    <div *ngIf="dataMail.controls.SubjectMail.errors.required">Veuillez renseigner l'objet de votre mail</div>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label for="ContentMail">Contenu</label>
+                <textarea name="ContentMail" required id="ContentMail" value="" height="500px" class="form-control" formControlName="ContentMail" [ngClass]="{ 'is-invalid': submitted && dataMail.controls.ContentMail.errors }"></textarea>
+                <div *ngIf="submitted && dataMail.controls.ContentMail.errors" class="invalid-feedback">
+                    <div *ngIf="dataMail.controls.ContentMail.errors.required">Veuillez renseigner le contenu de votre mail</div>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label for="MailFrom">Votre adresse mail</label>
+                <input type="text" required id="MailFrom" name="MailFrom" value="" class="form-control" formControlName="MailFrom" [ngClass]="{ 'is-invalid': submitted && dataMail.controls.MailFrom.errors }"/>
+                <div *ngIf="submitted && dataMail.controls.MailFrom.errors" class="invalid-feedback">
+                    <div *ngIf="dataMail.controls.MailFrom.errors.required || dataMail.controls.MailFrom.errors.email">Veuillez renseigner une adresse mail valide</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="button" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <div [ngClass]="{ 'thx' : !responseMailjet}">
+        <div>Merci de votre message.<br>Nous vous ferons un retour aussi rapidement que possible.<br><br>L'equipe, DoraVsShoopy</div>
+    </div>
+</div>
+

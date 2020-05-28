@@ -4,7 +4,7 @@
         <li *ngFor="let item of tab_rs" class="nav-item"><a class="nav-link text-center" href="https://{{item.path}}" target=_blank><i class="fa fa-{{item.icon}}" style="color: {{item.color}}"></i></a></li>
         </ul>
         <ul class="navbar-nav ml-auto" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link text-center" routerLinkActive="active-link" routerLink="" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-center" routerLinkActive="active-link" routerLink="" [routerLinkActiveOptions]="{ exact: true }">Accueil</a></li>
             <li *ngFor="let item of tab_nav" class="nav-item"><a class="nav-link text-center" routerLinkActive="active-link" routerLink="{{item.path}}">{{item.name}}</a></li>
         </ul>
     </div>

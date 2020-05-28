@@ -1,0 +1,7 @@
+.container {
+    padding-top: 10%;
+}
+.thx {
+    z-index:-1;
+    position: absolute
+}

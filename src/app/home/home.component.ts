@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 
@@ -9,7 +9,8 @@ import { AppComponent } from '../app.component';
 })
 export class HomeComponent implements OnInit {
   constructor( public route: Router, public glb: AppComponent) { }
- 
+  
+  @HostBinding('class.app-router_navigate') 
   ngOnInit(): void {
   }
   ngAfterViewInit(){

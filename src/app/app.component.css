@@ -14,16 +14,22 @@ app-navbar {
     margin-top: 5%;
     margin-left:0;
     margin-right: 0;
+    min-height: 790px;
 }
 .o_bg_black{
     background-color:rgba(0, 0, 0, 0.5);
-    color: white
-}
-.b_bl1 {
+    color: white;
     border: black 2px solid
 }
-.arrow_block {
+.arrow_block_left {
     position: fixed;
+    top: 50%;
+    left: 2%;
+}
+.arrow_block_right {
+    position: fixed;
+    top: 50%;
+    right: 0%;
 }
 .arrow {
     opacity: 0;
@@ -125,4 +131,25 @@ app-navbar {
         opacity: 0;
         right: 10%;
     }
+}
+
+.my-overlay {
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    background-color: white !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    transition: visibility 0s, opacity 0.4s linear !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: wait !important;
+}
+.my-overlay i.fa.fa-spinner.fa-spin, .spinner-big {
+    background-color: white!important;
+    font-size: 100px !important;
 }

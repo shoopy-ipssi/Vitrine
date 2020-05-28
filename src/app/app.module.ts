@@ -1,24 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
-import { ProjectComponent } from './project/project.component';
-import { MyroadComponent } from './myroad/myroad.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalComponent } from './global/global.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TeamComponent,
-    ProjectComponent,
-    MyroadComponent,
     ContactComponent,
     NavbarComponent,
     FooterComponent,
@@ -26,12 +25,14 @@ import { GlobalComponent } from './global/global.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'home', redirectTo: ''},
-      { path: '' , component: HomeComponent},
-      { path: 'team' , component: TeamComponent},
-      { path: 'project' , component: ProjectComponent},
-      { path: 'contact' , component: ContactComponent},
+      { path: '' , component: HomeComponent, data: {state: 'home'}},
+      { path: 'team' , component: TeamComponent, data: {state: 'team'}},
+      { path: 'contact' , component: ContactComponent, data: {state: 'contact'}},
       { path: '**' , redirectTo: ''}
     ])
   ],

@@ -1,23 +1,28 @@
-<app-navbar></app-navbar>
-<div class="row" id="main-content">
-  <div class="col-lg-1 text-center arrow_block">
-    <a routerLink="{{tab_nav[previousPage].path}}">
-      <div class="cursor">
-        <div class="arrow arrow-first"></div>
-        <div class="arrow arrow-second"></div>
-      </div>
-    </a>
+
+  <app-navbar></app-navbar>
+  <div class="my-overlay" *ngIf="showOverlay">
+    <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+    <br><br><br><br><br>Veuillez patientez
   </div>
-  <div class="offset-lg-1 col-lg-10 o_bg_black b_bl1">
-    <router-outlet></router-outlet>
+  <div class="row" id="main-content">
+    <div class="col-lg-1 text-center arrow_block_left">
+      <a routerLink="{{tab_nav[previousPage].path}}">
+        <div class="cursor">
+          <div class="arrow arrow-first"></div>
+          <div class="arrow arrow-second"></div>
+        </div>
+      </a>
+    </div>
+    <div class="offset-lg-1 col-lg-10 o_bg_black b_bl1">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-lg-1 offset-lg-1 text-center arrow_block_right">
+      <a routerLink="{{tab_nav[nextPage].path}}">
+        <div class="cursor">
+          <div class="arrow_right arrow_right-first"></div>
+          <div class="arrow_right arrow_right-second"></div>
+        </div>
+      </a>
+    </div>
   </div>
-  <div class="col-lg-1 offset-lg-1 text-center arrow_block">
-    <a routerLink="{{tab_nav[nextPage].path}}">
-      <div class="cursor">
-        <div class="arrow_right arrow_right-first"></div>
-        <div class="arrow_right arrow_right-second"></div>
-      </div>
-    </a>
-  </div>
-</div>
-<app-footer></app-footer>
+
