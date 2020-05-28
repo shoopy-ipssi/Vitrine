@@ -4,9 +4,6 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AppComponent } from '../app.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const headers = new HttpHeaders({
-  'Access-Control-Allow-Origin':'*',
-});
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -18,6 +15,10 @@ export class ContactComponent implements OnInit {
   private dataMail: any;
   private submitted = false;
   private responseMailjet: any;
+
+  public headers = new HttpHeaders({
+    'Access-Control-Allow-Origin':'*',
+  });
   constructor( public fb: FormBuilder,public route: Router, public glb: AppComponent, public http: HttpClient) {
     this.responseMailjet = false
     this.data_contact = [
@@ -39,7 +40,7 @@ export class ContactComponent implements OnInit {
     let d = this.dataMail.controls
     console.log(d.EmailContact.erros == null && d.SubjectMail.erros == null && d.ContentMail.erros == null && d.MailFrom.erros == null)
     if (d.EmailContact.erros == null && d.SubjectMail.erros == null && d.ContentMail.erros == null && d.MailFrom.erros == null) {
-      this.http.post('http://localhost:3000/sendMail', this.dataMail.value, {headers: headers}).subscribe(res => {
+      this.http.post('https://shoopymysql.herokuapp.com/sendMail', this.dataMail.value, {headers: this.headers}).subscribe(res => {
         this.responseMailjet = res
         console.log(this.responseMailjet)
       })
