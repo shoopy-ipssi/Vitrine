@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GlobalComponent } from './global/global.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     NavbarComponent,
     FooterComponent,
-    GlobalComponent
+    GlobalComponent,
+    MentionsLegalesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: '' , component: HomeComponent, data: {state: 'home'}},
       { path: 'team' , component: TeamComponent, data: {state: 'team'}},
       { path: 'contact' , component: ContactComponent, data: {state: 'contact'}},
+      { path: 'mentions_legales', component: MentionsLegalesComponent},
       { path: '**' , redirectTo: ''}
     ])
   ],
