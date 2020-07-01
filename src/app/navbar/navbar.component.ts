@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   tab_rs = [
-    {path : 'https://github.com/shoopy-ipssi/', icon: 'github', color: "white"},
+    {path : 'github.com/shoopy-ipssi/', icon: 'github', color: "white"},
   ]
   tab_nav = [
     {path:"team", name:"Notre équipe"},

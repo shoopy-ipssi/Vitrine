@@ -11,10 +11,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class ContactComponent implements OnInit {
-  private data_contact: any;
-  private dataMail: any;
-  private submitted = false;
-  private responseMailjet: any;
+  public data_contact: any;
+  public dataMail: any;
+  public submitted = false;
+  public responseMailjet: any;
 
   public headers = new HttpHeaders({
     'Access-Control-Allow-Origin':'*',

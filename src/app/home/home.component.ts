@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
 
 @Component({
   selector: 'app-home',
@@ -17,5 +18,5 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.glb.setIndexPage(this.route.url.replace('/', ''))
   });
-  }
+  } 
 }

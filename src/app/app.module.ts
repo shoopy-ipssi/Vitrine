@@ -13,6 +13,7 @@ import { GlobalComponent } from './global/global.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.co
   ],
   imports: [
     BrowserModule,
+    MDBBootstrapModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
