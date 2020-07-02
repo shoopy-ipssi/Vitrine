@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
       { path: '**' , redirectTo: ''}
     ])
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
